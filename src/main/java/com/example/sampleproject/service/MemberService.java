@@ -1,6 +1,6 @@
 package com.example.sampleproject.service;
 
-import com.example.sampleproject.dto.MemberDto;
+import com.example.sampleproject.dto.request.MemberSaveReqDto;
 import com.example.sampleproject.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     @Transactional
-    public void saveMember(MemberDto memberDto) {
-        memberRepository.save(memberDto.toEntity());
+    public void saveMember(MemberSaveReqDto memberSaveReqDto) {
+        memberRepository.save(memberSaveReqDto.toEntity());
     }
 }
