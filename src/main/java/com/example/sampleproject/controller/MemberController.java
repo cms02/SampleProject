@@ -27,16 +27,15 @@ public class MemberController {
 
     @PostMapping("/api/member")
     public ResponseEntity<?> saveMember(@RequestBody @Valid MemberSaveReqDto memberSaveReqDto/*, BindingResult bindingResult*/) {
-//        if (bindingResult.hasErrors()) {
-//            Map<String, String> errorMap = new HashMap<>();
-//            for (FieldError fe : bindingResult.getFieldErrors()) {
-//                errorMap.put(fe.getField(), fe.getDefaultMessage());
-//            }
-//            System.out.println(errorMap);
-//            return new ResponseEntity<>(CommonResDto.builder().msg(errorMap.toString()).build(),HttpStatus.BAD_REQUEST);
+/*        if (bindingResult.hasErrors()) {
+            Map<String, String> errorMap = new HashMap<>();
+            for (FieldError fe : bindingResult.getFieldErrors()) {
+                errorMap.put(fe.getField(), fe.getDefaultMessage());
+            }
+            return new ResponseEntity<>(CommonResDto.builder().msg(errorMap.toString()).build(),HttpStatus.BAD_REQUEST);
 //            throw new RuntimeException(errorMap.toString());
-//
-//        }
+
+        }*/
 
         memberService.saveMember(memberSaveReqDto);
         return new ResponseEntity<>(CommonResDto.builder().msg("등록 성공").build(),HttpStatus.CREATED);

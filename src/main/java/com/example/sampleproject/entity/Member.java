@@ -21,12 +21,10 @@ public class Member {
     private String name;
     @Column(nullable = false, length = 6)
     private String nikName;
-    private Long age;
 
     @Builder
-    public Member(String name, Long age, String nikName) {
+    public Member(String name, String nikName) {
         this.name = name;
-        this.age = age;
         this.nikName = nikName;
     }
 }
